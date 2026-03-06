@@ -1,5 +1,5 @@
 :root{
---primary:#2c3e50;
+--primary:#780040;
 --secondary:#34495e;
 --accent:#e67e22;
 --success:#27ae60;
@@ -54,7 +54,7 @@ color:var(--accent);
 }
 
 .user-profile{
-background:rgba(255,255,255,0.1);
+background:#780040;);
 padding:5px 12px;
 border-radius:20px;
 }
