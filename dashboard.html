@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard - Campus Marketplace</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+<nav>
+
+<div class="logo">🎓 Campus Market</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Marketplace</a></li>
+<li><a href="#" class="active">Dashboard</a></li>
+
+<li>
+<span class="user-profile" id="userName"></span>
+</li>
+
+<li>
+<a href="#" onclick="logout()" class="btn-logout">Logout</a>
+</li>
+
+</ul>
+
+</nav>
+
+
+
+<!-- ================= DASHBOARD ================= -->
+<div class="dashboard-container">
+
+<header class="dash-header">
+
+<div class="dash-welcome">
+<h2 id="welcomeUser"></h2>
+<p>Manage your listings and track your sales.</p>
+</div>
+
+<!-- ✅ Post Button Opens Add Page -->
+<button class="btn-add"
+onclick="location.href='add-product.html'">
++ Post New Item
+</button>
+
+</header>
+
+
+
+<!-- ================= STATS ================= -->
+<section class="stats-grid">
+
+<div class="stat-card">
+<h3>0</h3>
+<p>Active Listings</p>
+</div>
+
+<div class="stat-card">
+<h3>0</h3>
+<p>Total Views</p>
+</div>
+
+<div class="stat-card">
+<h3>0</h3>
+<p>Items Sold</p>
+</div>
+
+</section>
+
+
+
+<!-- ================= PRODUCTS LOAD HERE ================= -->
+
+<h3 class="section-title">My Products</h3>
+
+<div class="product-grid" id="productGrid">
+<!-- PRODUCTS WILL APPEAR HERE AUTOMATICALLY -->
+</div>
+
+</div>
+
+
+
+<!-- ================= SCRIPT ================= -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

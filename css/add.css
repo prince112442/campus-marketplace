@@ -1,0 +1,85 @@
+/* ============================= */
+/* ADD PRODUCT PAGE STYLING */
+/* ============================= */
+
+body{
+    background: #f4f6f9;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Container */
+.login-box{
+    width: 400px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Title */
+.login-box h2{
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+/* Inputs */
+.login-box input,
+.login-box textarea{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Focus Effect */
+.login-box input:focus,
+.login-box textarea:focus{
+    border-color: #e67e22;
+    box-shadow: 0 0 5px rgba(230,126,34,0.3);
+}
+
+/* Textarea */
+.login-box textarea{
+    height: 100px;
+    resize: none;
+}
+
+/* Button */
+.login-box button{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #e67e22;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Button Hover */
+.login-box button:hover{
+    background: #d35400;
+    transform: translateY(-2px);
+}
+
+/* Back Link */
+.login-box a{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-box a:hover{
+    color: #e67e22;
+}
