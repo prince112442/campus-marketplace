@@ -1,99 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dashboard - Campus Marketplace</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/dashboard.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Campus Marketplace</title>
+  <link rel="stylesheet" href="css/dashboard.css">
 </head>
-
 <body>
 
-<!-- ================= NAVIGATION ================= -->
 <nav>
-
-<div class="logo"><h1>>Campus Market</h1></div>
+<h2>CAMPUS MARKETPLACE</h2>
 
 <ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Marketplace</a></li>
-<li><a href="#" class="active">Dashboard</a></li>
-
-<li>
-<span class="user-profile" id="userName"></span>
-</li>
-
-<li>
-<a href="#" onclick="logout()" class="btn-logout">Logout</a>
-</li>
-
+<li><a href="marketplace.html">Marketplace</a></li>
+<li><a href="dashboard.html" class="active">Dashboard</a></li>
+<li><a href="#" onclick="logout()">Logout</a></li>
 </ul>
 
 </nav>
 
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+      <h2 id="welcomeUser">Hello! 👋</h2>
+      <button class="btn-add" onclick="location.href='add-product.html'">+ Post New Item</button>
+    </div>
 
+    <div class="stats">
+      <div class="stat-card"><h3 id="statActive">0</h3><p>Active</p></div>
+      <div class="stat-card"><h3 id="statViews">0</h3><p>Views</p></div>
+      <div class="stat-card"><h3 id="statSold">0</h3><p>Sold</p></div>
+    </div>
 
-<!-- ================= DASHBOARD ================= -->
-<div class="dashboard-container">
+    <div class="filters">
+      <input type="text" id="dashSearch" placeholder="Search..." onkeyup="filterDashboard()">
+      <select id="dashCategory" onchange="filterDashboard()">
+        <option value="All">All Categories</option>
+        <option>Phones</option><option>Electronics</option><option>Books</option>
+        <option>Fashion</option><option>Hostel Items</option><option>Food</option><option>Services</option>
+      </select>
+      <select id="dashLocation" onchange="filterDashboard()">
+        <option value="All">All Locations</option>
+        <option>Unity Hall</option><option>Brunei</option><option>Ayeduase</option>
+        <option>Kotei</option><option>Kentinkrono</option><option>Off Campus</option>
+      </select>
+    </div>
 
-<header class="dash-header">
+    <h3>My Products</h3>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
 
-<div class="dash-welcome">
-<h2 id="welcomeUser"></h2>
-<p>Manage your listings and track your sales.</p>
-</div>
-
-<!-- ✅ Post Button Opens Add Page -->
-<button class="btn-add"
-onclick="location.href='add-product.html'">
-+ Post New Item
-</button>
-
-</header>
-
-
-
-<!-- ================= STATS ================= -->
-<section class="stats-grid">
-
-<div class="stat-card">
-<h3>0</h3>
-<p>Active Listings</p>
-</div>
-
-<div class="stat-card">
-<h3>0</h3>
-<p>Total Views</p>
-</div>
-
-<div class="stat-card">
-<h3>0</h3>
-<p>Items Sold</p>
-</div>
-
-</section>
-
-
-
-<!-- ================= PRODUCTS LOAD HERE ================= -->
-
-<h3 class="section-title">My Products</h3>
-
-<div class="product-grid" id="productGrid">
-<!-- PRODUCTS WILL APPEAR HERE AUTOMATICALLY -->
-</div>
-
-</div>
-
-
-
-<!-- ================= SCRIPT ================= -->
-<script src="js/script.js"></script>
-
+  <script src="js/script.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+      checkAuth();
+      loadDashboard();
+    });
+  </script>
 </body>
 </html>

@@ -1,39 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Add Product</title>
-<link rel="stylesheet" href="css/add.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product - Campus Marketplace</title>
+  <link rel="stylesheet" href="css/add.css">
 </head>
 <body>
 
 <div class="login-box">
+  <h2>🛍️ Add New Product</h2>
 
-<h2>Add New Product 🛍️</h2>
+  <form onsubmit="addProduct(event); return false;">
 
-<input type="text" id="productName" placeholder="Product Name">
+    <!-- Product Name -->
+    <div class="input-group">
+      <input type="text" id="productName" placeholder=" " required>
+      <label>Product Name *</label>
+    </div>
 
-<input type="number" id="productPrice" placeholder="Price (₵)">
+    <!-- Row -->
+    <div class="row">
+      <div class="input-group">
+        <input type="number" id="productPrice" placeholder=" " min="1" required>
+        <label>Price (₵) *</label>
+      </div>
 
-<input type="text" id="productSeller" placeholder="Seller Name">
+      <div class="input-group">
+        <select id="productCategory" required>
+          <option value="" disabled selected hidden></option>
+          <option>Phones</option>
+          <option>Electronics</option>
+          <option>Books</option>
+          <option>Fashion</option>
+          <option>Hostel Items</option>
+          <option>Food</option>
+          <option>Services</option>
+        </select>
+        <label>Category *</label>
+      </div>
+    </div>
 
-<input type="text" id="productCategory" placeholder="Category (Laptop, Book, Phone etc)">
+    <!-- Location -->
+    <div class="input-group">
+      <select id="productLocation" required>
+        <option value="" disabled selected hidden></option>
+        <option>Unity Hall</option>
+        <option>Brunei</option>
+        <option>Ayeduase</option>
+        <option>Kotei</option>
+        <option>Kentinkrono</option>
+        <option>Off Campus</option>
+      </select>
+      <label>Location *</label>
+    </div>
 
-<input type="file" id="productImage" accept="image/*">
+    <!-- Contact -->
+    <div class="input-group">
+      <input type="text" id="productContact" placeholder=" " required>
+      <label>Contact (Phone/WhatsApp) *</label>
+    </div>
 
-<textarea id="productDescription" placeholder="Product Description"></textarea>
+    <!-- Description -->
+    <div class="input-group">
+      <textarea id="productDescription" placeholder=" "></textarea>
+      <label>Description</label>
+    </div>
 
-<br>
+    <!-- Image Upload -->
+    <div class="file-upload">
+      <input type="file" id="productImage" accept="image/*">
+      <p>📁 Click to upload product image (optional)</p>
+    </div>
 
-<button onclick="addProduct()">
-Add Product
-</button>
+    <!-- Button -->
+    <button type="submit">🚀 Post Product</button>
 
-<br><br>
+  </form>
 
-<a href="dashboard.html">
-🔙 Back to Dashboard
-</a>
-
+  <a href="dashboard.html">← Back to Dashboard</a>
 </div>
 
 <script src="js/script.js"></script>
